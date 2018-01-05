@@ -20,8 +20,6 @@
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="../../dist/css/sticky-footer-navbar.css" rel="stylesheet">
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   <!-- Leaflet Map Custom CSS -->
   <link href="../../dist/css/custom-map.css" rel="stylesheet">
 </head>
@@ -50,7 +48,6 @@
             <ul class="dropdown-menu" role="menu">
               <li class="dropdown-header">The Route</li>
               <li class="active"><a href="overview.html">Overview</a></li>
-              <li><a href="stages.html">Stages</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">Resources</li>
               <li><a href="downloads.html">Downloads</a></li>
@@ -69,14 +66,14 @@
       </div>
       <div class="row">
           
-              <button class="btn btn-default stagebutton" onclick="showOverview">Route overview &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showOverview()">Route overview &raquo;</button>
               <button class="btn btn-default stagebutton" onclick="showRoute(0)" data-toggle="collapse" data-target="#viewdetails1">St Just - Salcombe &raquo;</button>
               <p class="collapse" id="viewdetails1">Distance - Grab this with leaflet-gpx<br>
               Via - Grab these from waypoints in Leaflet GPX<br>
               Ascent - Grab this from leaflet-gpx<br>
-              <ul class="info">
+              <!-- <ul class="info">
                   <li>Distance:&nbsp;<span class="distance"></span>&nbsp;mi</li>
-                </ul>
+                </ul> -->
               <a class="btn btn-success" href="Stages/St Just - Salcombe/St Just Salcombe.PDF" download="St Just - Salcombe Instructions" role="button"><span class="glyphicon glyphicon-floppy-save"></span> Get the course notes</a>
               <a class="btn btn-success" href="GPX Files/St Just Salcombe.gpx" download="St Just Salcombe.gpx" role="button"><span class="glyphicon glyphicon-floppy-save"></span> Just the gpx file</a></p>
               
@@ -118,6 +115,9 @@
       <div id="stagemap">
         <script src="../../dist/js/maplayer.js">
         </script>
+      </div>
+      <div class="well stagedesc">
+        <p>Stage Description to maybe be dropped in here.</p>
       </div>
     </div>
     

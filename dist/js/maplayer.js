@@ -37,12 +37,14 @@ var gpxArray = [
   '../../GPX Files/Ilfracombe St Just.gpx',
 ];
 
+
+
 for (gpx of gpxArray) {
 
   new L.GPX(gpx, {
     async: true,
     marker_options: {
-      startIconUrl: 'pin-icon-start.png',
+      startIconUrl: '',
       endIconUrl:   '',
       shadowUrl:    '',
       wptIconUrls: {
@@ -54,10 +56,21 @@ for (gpx of gpxArray) {
 
 }
 
+
 function showRoute(arrayKey) {
 
   var clickedRoute = gpxArray[arrayKey];
-  new L.GPX(clickedRoute, {async: true}).on('loaded', function(e) {
+  new L.GPX(clickedRoute, {
+    async: true,
+    marker_options: {
+       startIconUrl: 'pin-icon-start.png',
+       endIconUrl:   '',
+       shadowUrl:    'pin-shadow.png',
+       wptIconUrls: {
+         'wpt': '',
+       },
+      },
+  }).on('loaded', function(e) {
     map.fitBounds(e.target.getBounds(), {padding: [50, 50]});
   }).addTo(map);
 

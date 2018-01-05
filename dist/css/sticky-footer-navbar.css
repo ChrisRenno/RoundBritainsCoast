@@ -54,3 +54,7 @@ code {
 .stagebutton {
   display: block
 }
+
+.stagedesc {
+  margin-top: 15px;
+}
