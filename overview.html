@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+  
+  <!-- Leaflet CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+
+  <!-- Leaflet GPX CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.3.1/gpx.min.js"></script>
+
+  <title>Round Britain's Coast</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../../dist/css/sticky-footer-navbar.css" rel="stylesheet">
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  <!-- Leaflet Map Custom CSS -->
+  <link href="../../dist/css/custom-map.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href=" index.html">Round Britain's Coast</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href=" index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+          <li class="active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Audax <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="dropdown-header">The Route</li>
+              <li class="active"><a href="overview.html">Overview</a></li>
+              <li><a href="stages.html">Stages</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Resources</li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          <li><a href="contact.html">Contact</a></li>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-md-4">
+      <div class="row">
+          <h3>Stages.</h3>
+      </div>
+      <div class="row">
+          
+              <button class="btn btn-default stagebutton" onclick="showOverview">Route overview &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(0)" data-toggle="collapse" data-target="#viewdetails1">St Just - Salcombe &raquo;</button>
+              <p class="collapse" id="viewdetails1">Distance - Grab this with leaflet-gpx<br>
+              Via - Grab these from waypoints in Leaflet GPX<br>
+              Ascent - Grab this from leaflet-gpx<br>
+              <ul class="info">
+                  <li>Distance:&nbsp;<span class="distance"></span>&nbsp;mi</li>
+                </ul>
+              <a class="btn btn-success" href="Stages/St Just - Salcombe/St Just Salcombe.PDF" download="St Just - Salcombe Instructions" role="button"><span class="glyphicon glyphicon-floppy-save"></span> Get the course notes</a>
+              <a class="btn btn-success" href="GPX Files/St Just Salcombe.gpx" download="St Just Salcombe.gpx" role="button"><span class="glyphicon glyphicon-floppy-save"></span> Just the gpx file</a></p>
+              
+              <button class="btn btn-default stagebutton" onclick="showRoute(1)">Salcombe - Wareham &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(2)">Wareham - Lewes &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(3)">Lewes - Dartford &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(4)">Dartford - Lowestoft &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(5)">Lowestoft - Coningsby &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(6)">Coningsby - Eastfield &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(7)">Eastfield - Alnwick &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(8)">Alnwick - Glenrothes &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(9)">Glenrothes - Inverurie &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(10)">Inverurie - Inverness &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(11)">Inverness - Thurso &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(12)">Thurso - Ullapool &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(13)">Ullapool - Mallaig &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(14)">Mallaig - Oban &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(15)">Oban - Ayr &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(16)">Ayr - Dumfries &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(17)">Dumfries - Kendal &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(18)">Kendal - Mold &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(19)">Mold - Bala &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(20)">Bala - Fishguard &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(21)">Fishguard - Newport &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(22)">Newport - Ilfracombe &raquo;</button>
+              <button class="btn btn-default stagebutton" onclick="showRoute(23)">Ilfracombe - St Just &raquo;</button>
+           
+
+      </div>
+      <div class="row">
+        <p>Also available as a .zip download for all the stages.</p>
+      <a class="btn btn-success" href="downloads.html"role="button">Download page &raquo;</a>
+    </div>
+
+    </div>
+      
+      
+    <div class="col-md-8">
+      <div id="stagemap">
+        <script src="../../dist/js/maplayer.js">
+        </script>
+      </div>
+    </div>
+    
+    
+  
+    
+      
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="col-md-8">
+        <p class="text-muted credit" style="text-align:left">Cobbled together by Chris Reynolds</p>
+      </div>
+      <div class="col-md-4">
+        <p class="text-muted credit" style="text-align:right">Built using <a href="http://getbootstrap.com/">bootstrap</a> & <a href="http://leafletjs.com/"> leaflet</a> & <a href="https://github.com/mpetazzoni/leaflet-gpx">leaflet-gpx</a></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+
+
+</body></html>
